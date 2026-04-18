@@ -5,13 +5,13 @@ from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
 // 2. 貼上你剛剛在 Firebase 主控台複製的設定檔 (這把鑰匙是你專屬的)
 const firebaseConfig = {
-  apiKey: "AIzaSy你的API金鑰...",
-  authDomain: "你的專案.firebaseapp.com",
-  databaseURL: "https://你的專案-default-rtdb.firebaseio.com",
-  projectId: "你的專案ID",
-  storageBucket: "你的專案.appspot.com",
-  messagingSenderId: "你的發送者ID",
-  appId: "你的AppID"
+  apiKey: "AIzaSyBgukCFMe_2xhHsHSmFJ_laPjQoRSkmK7I",
+  authDomain: "portfolio-click-test.firebaseapp.com",
+  databaseURL: "https://portfolio-click-test-default-rtdb.firebaseio.com/",
+  projectId: "portfolio-click-test",
+  storageBucket: "portfolio-click-test.firebasestorage.app",
+  messagingSenderId: "852821339856",
+  appId: "1:852821339856:web:b49d03316b67175a3a38d5"
 };
 
 // 3. 初始化 Firebase 與資料庫
