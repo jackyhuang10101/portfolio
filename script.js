@@ -53,18 +53,38 @@ document.addEventListener('visibilitychange', () => {
 // 針對部分手機瀏覽器，加入 pagehide 作為備援
 window.addEventListener('pagehide', uploadFinalScore);
 
-// 建立一個函數，只在需要時執行一次抓取
 async function refreshLeaderboard() {
+    const leaderboardList = document.getElementById('leaderboardList');
+    
+    // 建立查詢：按分數排序並取最後 10 筆
     const topScoresQuery = query(ref(db, 'scores'), orderByChild('score'), limitToLast(10));
     
     try {
-        const snapshot = await get(topScoresQuery); // 使用 get 而非 onValue
+        const snapshot = await get(topScoresQuery);
+        
+        // 【關鍵】只要連線成功，就先把「載入中」清掉
+        leaderboardList.innerHTML = ''; 
+
         if (snapshot.exists()) {
-            // ... 這裡放原本處理 dataArray 並更新 UI 的邏輯 ...
-            console.log("排行榜已更新");
+            let dataArray = [];
+            snapshot.forEach((childSnapshot) => {
+                dataArray.push(childSnapshot.val());
+            });
+            dataArray.reverse();
+
+            dataArray.forEach((data, index) => {
+                const li = document.createElement('li');
+                li.textContent = `#${index + 1} ${data.name} - ${data.score}`;
+                leaderboardList.appendChild(li);
+            });
+        } else {
+            // 如果資料庫沒資料，顯示提示而不是空白
+            leaderboardList.innerHTML = '<li>目前還沒有人上榜，快來挑戰！</li>';
         }
     } catch (error) {
+        // 如果還是噴紅字，把錯誤顯示在網頁上方便除錯
         console.error("抓取失敗:", error);
+        leaderboardList.innerHTML = `<li style="color:red">連線失敗：${error.message}</li>`;
     }
 }
 
