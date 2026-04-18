@@ -53,10 +53,6 @@ document.addEventListener('visibilitychange', () => {
 // 針對部分手機瀏覽器，加入 pagehide 作為備援
 window.addEventListener('pagehide', uploadFinalScore);
 
-// 5. 監聽資料庫變化，自動更新排行榜
-// 設定查詢：找到 'scores' 資料夾，用 score 排序，並只抓取最後 10 筆 (即最高分的 10 筆)
-const topScoresQuery = query(ref(db, 'scores'), orderByChild('score'), limitToLast(10));
-
 // 建立一個函數，只在需要時執行一次抓取
 async function refreshLeaderboard() {
     const topScoresQuery = query(ref(db, 'scores'), orderByChild('score'), limitToLast(10));
