@@ -1,57 +1,174 @@
-/* ... (保留你原本的 css 設定) ... */
-body {
-    background-color: #2b2b2b;
-    color: #ffffff;
-    font-family: monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* =========================================
+   1. 顏色與字體設定 (修改這裡即可改變整體風格)
+   ========================================= */
+:root {
+    --bg-color: #ffffff;         /* 網站背景色 (白) */
+    --text-color: #1a1a1a;       /* 主要文字顏色 (深灰) */
+    --secondary-text: #666666;   /* 次要文字顏色 (淺灰) */
+    --accent-color: #000000;     /* 強調色/線條顏色 (黑) */
+    --font-family: "Helvetica Neue", Arial, "微軟正黑體", sans-serif;
+}
+
+/* =========================================
+   2. 基礎重置與排版
+   ========================================= */
+* {
+    box-sizing: border-box;
     margin: 0;
-}
-.container {
-    text-align: center;
-}
-.pixel-btn {
-    background-color: #4CAF50;
-    border: 4px solid #fff;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 16px;
-    font-family: monospace;
-    cursor: pointer;
-    box-shadow: 4px 4px 0px #000;
-}
-.pixel-btn:active {
-    box-shadow: 0px 0px 0px #000;
-    transform: translate(4px, 4px);
-}
-
-.pixel-input {
-    padding: 10px;
-    margin-bottom: 15px;
-    font-family: monospace;
-    border: 2px solid #fff;
-    background-color: #333;
-    color: #fff;
-}
-
-.leaderboard-box {
-    margin-top: 30px;
-    padding: 20px;
-    border: 4px dashed #4CAF50;
-    text-align: left;
-    display: inline-block;
-    min-width: 250px;
-}
-
-ul {
-    list-style-type: none;
     padding: 0;
 }
 
-li {
-    padding: 8px 0;
-    border-bottom: 1px solid #555;
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+/* =========================================
+   3. 導覽列 (Header)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--accent-color);
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 100;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: var(--secondary-text);
+}
+
+/* =========================================
+   4. 共同區塊設定
+   ========================================= */
+.section {
+    padding: 60px 0;
+    border-bottom: 1px dashed var(--accent-color);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* 圖片佔位符號 (之後可替換成實際 img 標籤) */
+.placeholder {
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text);
+}
+
+/* =========================================
+   5. 作品集網格 (Works Grid)
+   ========================================= */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.work-card .work-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    margin-bottom: 15px;
+}
+
+.work-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.work-info .materials {
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+}
+
+.work-info .meta {
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* =========================================
+   6. 簡介與履歷 (Profiles & CV)
+   ========================================= */
+.intro-text {
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    max-width: 800px;
+}
+
+.profiles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.profile-photo {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%; /* 圓形照片 */
+    margin-bottom: 20px;
+    max-width: 250px;
+}
+
+.bio {
+    margin: 15px 0;
+    font-size: 0.95rem;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+.cv-section h4 {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--accent-color);
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.cv-section ul {
+    list-style: none;
+    font-size: 0.85rem;
+}
+
+.cv-section li {
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   7. 頁尾
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.8rem;
+    color: var(--secondary-text);
 }
