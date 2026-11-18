@@ -3,91 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>您的團體名稱 - Portfolio</title>
+    <title>Jen Yu Huang — 黃壬煜</title>
+    <!-- 引入與圖二風格相近的幾何字體與繁體中文字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
     <!-- 導覽列 -->
-    <header class="navbar">
-        <div class="logo">Bô Piau Tsun Tsè-Tsok-不標準製作</div>
-        <nav>
-            <a href="#works">View works</a>
-            <a href="#profiles">Profiles & CV</a>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">
+                <a href="#" class="brand-zh">黃壬煜</a>
+                <span class="brand-en">Jen Yu Huang</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-item active">Index</a>
+                <a href="#works" class="nav-item">Portfolio</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- 作品集區塊 -->
-    <section id="works" class="section">
-        <h2 class="section-title">WORKS</h2>
-        <div class="works-grid">
-            <!-- 作品 1 -->
-            <article class="work-card">
-                <div class="work-image placeholder">圖片放置處 1</div>
-                <div class="work-info">
-                    <h3>01110100 01101111</h3>
-                    <p class="materials">Electronic materials, Arduino, acrylic, wood, paper</p>
-                    <p class="meta">Digital Installation 2025</p>
-                </div>
-            </article>
+    <main class="container">
+        <!-- Hero 主視覺區 -->
+        <section class="hero">
+            <h1 class="hero-title">黃壬煜...寫點東西</h1>
+            <p class="hero-subtitle">寫點東西寫點東西</p>
+            <div class="hero-actions">
+                <a href="#works" class="btn btn-primary">View works</a>
+                <a href="#profiles" class="btn btn-outline">Profiles &amp; CV</a>
+                <a href="#works" class="btn btn-outline">Portfolio</a>
+            </div>
+        </section>
 
-            <!-- 作品 2 -->
-            <article class="work-card">
-                <div class="work-image placeholder">圖片放置處 2</div>
-                <div class="work-info">
-                    <h3>Peering Through the Collapse</h3>
-                    <p class="materials">Arduino, Plasma Ball, TouchDesigner, QRNG</p>
-                    <p class="meta">Installation 2024</p>
-                </div>
-            </article>
-            
-            <!-- 若要新增作品，只需複製上方的 <article> 區塊並修改內容即可 -->
-        </div>
-    </section>
+        <hr class="divider">
 
-    <!-- 簡介與履歷區塊 -->
-    <section id="profiles" class="section">
-        <h2 class="section-title">PROFILES & CV</h2>
-        <div class="intro-text">
-            <p>我們是無法被定義的團體... (在此輸入您的團體簡介)</p>
-        </div>
-        
-        <div class="profiles-container">
-            <!-- 成員 1 -->
-            <div class="profile-card">
-                <div class="profile-photo placeholder">照片放置處</div>
-                <h3>Yu-Fang LAI 賴榆方</h3>
-                <p class="bio">目前於紐約大學 Tandon 工程學院攻讀整合設計與媒體碩士...</p>
-                <a href="mailto:yf.yvonne.lai@gmail.com" class="contact-link">Contact</a>
-                
-                <div class="cv-section">
-                    <h4>EDUCATION</h4>
-                    <ul>
-                        <li>2025- MS, Integrated Design & Media – NYU</li>
-                        <li>2021-2025 BFA, Technology and Art - NTHU</li>
-                    </ul>
+        <!-- WORKS 作品集區 -->
+        <section id="works" class="works-section">
+            <div class="works-header">
+                <h2 class="section-heading">WORKS</h2>
+
+
+                <!-- 分類篩選按鈕 -->
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="vr">VR</button>
+                    <button class="filter-btn" data-filter="installation">installation</button>
+                    <button class="filter-btn" data-filter="member2">Wei-Cheng HSU</button>
                 </div>
+
             </div>
 
-            <!-- 成員 2 -->
-            <div class="profile-card">
-                <div class="profile-photo placeholder">照片放置處</div>
-                <h3>Wei-Cheng HSU 許煒晟</h3>
-                <p class="bio">持續創作結合數位科技、電子裝置、媒體考古與電影史學的作品...</p>
-                <a href="mailto:scott2984623@gmail.com" class="contact-link">Contact</a>
-                
-                <div class="cv-section">
-                    <h4>EDUCATION</h4>
-                    <ul>
-                        <li>2026- MFA, Digital Art - Pratt Institute</li>
-                        <li>2021-2025 BFA, Technology and Art - NTHU</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="works-grid">
 
-    <footer>
-        <p>©2026 您的團體名稱</p>
+                <!-- 作品 東門Dongmen -->
+                <article class="work-card" data-category="vr">
+                    <div class="work-thumb">
+                        <img src="D:\project\00_portfolio\asset\work-photo\IMG_1276.JPG" alt="作品名稱">
+                    </div>
+                    <div class="work-meta">
+                        <h4>01110100 01101111</h4>
+                        <p class="work-materials">Electronic materials, Arduino, acrylic, wood, paper</p>
+                        <p class="work-year">Digital Installation · 2025</p>
+                    </div>
+                </article>
+
+                <!-- 作品卡片 2 -->
+                <article class="work-card" data-category="vr">
+                    <div class="work-thumb">
+                        <div class="thumb-placeholder">圖片放置處 2</div>
+                    </div>
+                    <div class="work-meta">
+                        <h4>Peering Through the Collapse</h4>
+                        <p class="work-materials">Arduino, Plasma Ball, TouchDesigner, QRNG</p>
+                        <p class="work-year">Installation · 2024</p>
+                    </div>
+                </article>
+
+                <!-- 作品卡片 3（範例：成員個人作品） -->
+                <article class="work-card" data-category="installation">
+                    <div class="work-thumb">
+                        <div class="thumb-placeholder">圖片放置處 3</div>
+                    </div>
+                    <div class="work-meta">
+                        <h4>Centering</h4>
+                        <p class="work-materials">Max9, game console</p>
+                        <p class="work-year">Live Performance · 2026</p>
+                    </div>
+                </article>
+
+                <!-- 作品卡片 4 -->
+                <article class="work-card" data-category="member2">
+                    <div class="work-thumb">
+                        <div class="thumb-placeholder">圖片放置處 4</div>
+                    </div>
+                    <div class="work-meta">
+                        <h4>Print-ER</h4>
+                        <p class="work-materials">3D Printer, PLA, TouchDesigner</p>
+                        <p class="work-year">Performance · 2026</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- PROFILES & CV 區 -->
+        <section id="profiles" class="profiles-section">
+            <h2 class="section-heading">PROFILES &amp; CV</h2>
+            <p class="intro-text">
+                簡單的簡介
+            </p>
+
+            <div class="profiles-grid">
+                <div class="profile-card">
+                    <h3 class="sub-heading">Jen-Yu Huang</h3>
+                    <p class="bio">在這裡填入成員簡介與創作方向...</p>
+                    <a href="mailto:example@gmail.com" class="nav-item">mail</a>
+                    <a href="mailto:example@gmail.com" class="nav-item">instagram</a>
+                    <div class="cv-block">
+
+                        <h4>EDUCATION</h4>
+                        <ul>
+                            <li>2025- MS, Integrated Design &amp; Media - NYU</li>
+                            <li>2021-2025 Bachelor of Fine Arts, Technology and Art - NTHU, Taiwan</li>
+                        </ul>
+                        <h4>EXIBITION</h4>
+                        <ul>
+                            <li>2025- MS, Integrated Design &amp; Media - NYU</li>
+                            <li>2021-2025 Bachelor of Fine Arts, Technology and Art - NTHU, Taiwan</li>
+                        </ul>
+                        <h4>AWARD</h4>
+                        <ul>
+                            <li>2025- MS, Integrated Design &amp; Media - NYU</li>
+                            <li>2021-2025 Bachelor of Fine Arts, Technology and Art - NTHU, Taiwan</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 黃壬煜 Huang Jen Yu</p>
+        </div>
     </footer>
+
+    <!-- 讓上方的分類篩選按鈕可以實際運作 -->
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const workCards = document.querySelectorAll('.work-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                workCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
