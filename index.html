@@ -2,25 +2,92 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>像素採集測試</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>您的團體名稱 - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>像素採集測試</h1>
-        <input type="text" id="playerName" placeholder="輸入你的勇者名稱" class="pixel-input">
-        
-        <button id="clickBtn" class="pixel-btn">採集金幣</button>
-        <p>目前採集量： <span id="score">0</span></p>
+    <!-- 導覽列 -->
+    <header class="navbar">
+        <div class="logo">Bô Piau Tsun Tsè-Tsok-不標準製作</div>
+        <nav>
+            <a href="#works">View works</a>
+            <a href="#profiles">Profiles & CV</a>
+        </nav>
+    </header>
 
-        <div class="leaderboard-box">
-            <h2>🏆 放置英雄榜</h2>
-            <ul id="leaderboardList">
-                <li>載入中...</li>
-            </ul>
+    <!-- 作品集區塊 -->
+    <section id="works" class="section">
+        <h2 class="section-title">WORKS</h2>
+        <div class="works-grid">
+            <!-- 作品 1 -->
+            <article class="work-card">
+                <div class="work-image placeholder">圖片放置處 1</div>
+                <div class="work-info">
+                    <h3>01110100 01101111</h3>
+                    <p class="materials">Electronic materials, Arduino, acrylic, wood, paper</p>
+                    <p class="meta">Digital Installation 2025</p>
+                </div>
+            </article>
+
+            <!-- 作品 2 -->
+            <article class="work-card">
+                <div class="work-image placeholder">圖片放置處 2</div>
+                <div class="work-info">
+                    <h3>Peering Through the Collapse</h3>
+                    <p class="materials">Arduino, Plasma Ball, TouchDesigner, QRNG</p>
+                    <p class="meta">Installation 2024</p>
+                </div>
+            </article>
+            
+            <!-- 若要新增作品，只需複製上方的 <article> 區塊並修改內容即可 -->
         </div>
-    </div>
-    
-    <script type="module" src="script.js"></script>
+    </section>
+
+    <!-- 簡介與履歷區塊 -->
+    <section id="profiles" class="section">
+        <h2 class="section-title">PROFILES & CV</h2>
+        <div class="intro-text">
+            <p>我們是無法被定義的團體... (在此輸入您的團體簡介)</p>
+        </div>
+        
+        <div class="profiles-container">
+            <!-- 成員 1 -->
+            <div class="profile-card">
+                <div class="profile-photo placeholder">照片放置處</div>
+                <h3>Yu-Fang LAI 賴榆方</h3>
+                <p class="bio">目前於紐約大學 Tandon 工程學院攻讀整合設計與媒體碩士...</p>
+                <a href="mailto:yf.yvonne.lai@gmail.com" class="contact-link">Contact</a>
+                
+                <div class="cv-section">
+                    <h4>EDUCATION</h4>
+                    <ul>
+                        <li>2025- MS, Integrated Design & Media – NYU</li>
+                        <li>2021-2025 BFA, Technology and Art - NTHU</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 成員 2 -->
+            <div class="profile-card">
+                <div class="profile-photo placeholder">照片放置處</div>
+                <h3>Wei-Cheng HSU 許煒晟</h3>
+                <p class="bio">持續創作結合數位科技、電子裝置、媒體考古與電影史學的作品...</p>
+                <a href="mailto:scott2984623@gmail.com" class="contact-link">Contact</a>
+                
+                <div class="cv-section">
+                    <h4>EDUCATION</h4>
+                    <ul>
+                        <li>2026- MFA, Digital Art - Pratt Institute</li>
+                        <li>2021-2025 BFA, Technology and Art - NTHU</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>©2026 您的團體名稱</p>
+    </footer>
 </body>
 </html>
