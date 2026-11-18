@@ -32,14 +32,22 @@ clickBtn.addEventListener('click', () => {
 
 // 定義上傳函數
 function uploadFinalScore() {
+    // 只有當分數大於 0 的時候才上傳
     if (score > 0) {
         const playerName = nameInput.value || "無名冒險者";
+        
+        // 1. 將資料推送到 Firebase
         push(ref(db, 'scores'), {
             name: playerName,
             score: score
         });
-        // 上傳後可以重設本地分數，避免重複計算
-        console.log("資料已成功同步至 Firebase");
+
+        // 2. 【關鍵修復】上傳完成後，立刻將本地分數歸零！
+        // 這樣一來，即使瀏覽器在 0.1 秒後觸發了第二個離開事件，
+        // 也會因為 score 已經變成 0，而無法通過上面的 if (score > 0) 檢查。
+        score = 0; 
+        
+        console.log("資料已成功同步至 Firebase，並重置本地分數");
     }
 }
 
